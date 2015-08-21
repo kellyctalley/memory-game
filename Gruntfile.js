@@ -39,6 +39,7 @@ module.exports = function(grunt) {
                 files: [
                     './app/images/*.{png,jpg,jpeg}',
                     './app/scripts/**/*.js',
+                    './app/scripts/**/*.json',                    
                     './app/sass/**/*.scss',
                     './app/pages/**/*.html',
                     './app/templates/**/*.html',
@@ -77,6 +78,11 @@ module.exports = function(grunt) {
                 }, {
                   expand: true,
                   src: [ './**/*.js' ],
+                  dest: './dist/js',
+                  cwd: './app/scripts'
+                }, {
+                  expand: true,
+                  src: [ './**/*.json' ],
                   dest: './dist/js',
                   cwd: './app/scripts'
                 }]
