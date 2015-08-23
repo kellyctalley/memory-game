@@ -59,6 +59,8 @@ function shuffle(array) {
   return array;
 }
 
+
+
 //////////
 //loads cards from json file and shuffles
 var cards;
@@ -102,6 +104,8 @@ $.getJSON('/js/cards.json', function(data) {
   });
 
 
+
+
 ///////
 //flip on click
 (function() {
@@ -120,14 +124,25 @@ $.getJSON('/js/cards.json', function(data) {
 })();
 });
 
+
+
+
 //////////
 //creates click function for card
 $(function () {
   $(".card-game").on("click", ".card", function (event) {
     var card = $(event.target);
-    console.log(card.attr("src"));
+    var front = $(this).find(".front");
+    var back = card.find(".back");
+    var src = front.attr("src");
+    console.log(src);
+    //console.log(card.attr("src"));
   });
 });
+
+
+
+
 
 
 
