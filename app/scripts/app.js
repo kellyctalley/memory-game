@@ -1,3 +1,13 @@
+$(function () {
+ $(".you-win").hide();
+ $(".card-game").hide();
+
+ $(".start-game").on("click", function() {
+  $(".welcome").hide();
+  $(".card-game").show();
+ });
+});
+
 //////////
 //shuffles cards
 function shuffle(array) {
@@ -100,6 +110,10 @@ $(function () {
   var totalAttempts = 0;
   var totalMatches = 0;
 
+  $(".stats-box").append('<p class="stats">attempts: <span id="attempts">' + totalAttempts + '</span></p>');
+  $(".stats-box").append('<p class="stats">matches: <span id="matches">' + totalMatches + '</span></p>');
+
+
   $(".card-game").on("click", ".card:not(.matched)", function (event) {
     var card = $(this);
     var front = card.find(".front");
@@ -121,14 +135,19 @@ $(function () {
           selectedCard = null;
           totalAttempts += 1
           totalMatches += 1;
-          console.log(totalAttempts);
+          $("#matches").html(totalMatches);
+          $("#attempts").html(totalAttempts);
           // check matched cards to number of cards total
           // did they win?
+          if (totalMatches === 15) {
+            $(".card-game").hide(500);
+            $(".you-win").show(2000);
+          }
         } else {
           card.addClass("flipped");
           console.log("no match");
           totalAttempts += 1;
-          console.log(totalAttempts);
+          $("#attempts").html(totalAttempts);
           setTimeout(function () {
             card.removeClass("flipped");
             selectedCard.removeClass("flipped");
