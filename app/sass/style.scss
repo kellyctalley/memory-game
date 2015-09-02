@@ -13,7 +13,7 @@ html {
   padding: 30px 100px;
 }
 
-h1 {
+.main-head {
   color: #54c2b7;
   font-family: 'Dancing Script', Georgia, serif;
   font-size: 5em;
@@ -22,16 +22,31 @@ h1 {
   margin-bottom: 30px;
 }
 
-h2 {
-  color: #636363;
-  font-family: 'Dancing Script', Georgia, serif;
-  font-size: 2.5em;
+.welcome, .you-win {
+  margin-top: 200px;
   text-align: center;
 }
 
-p {
+.welcome-head {
+  color: #a3ce7d;
+  font-family: 'Dancing Script', Georgia, serif;
+  font-size: 4em;
+}
+
+.welcome-text, .stats {
   color: #636363;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
+.start-game, .play-again {
+  background-color: transparent;
+  border: 1px solid #000;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 24px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .stats-box {
@@ -40,6 +55,7 @@ p {
   width: 200px;
   height: 670px;
   vertical-align: top;
+  padding: 20px 0 0 15px;
 }
 
 .game-box {
@@ -50,10 +66,6 @@ p {
   height: 670px;
   vertical-align: top;
   padding: 5px;
-}
-
-.welcome {
-  text-align: center;
 }
 
 .card {
